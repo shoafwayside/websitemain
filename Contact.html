@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ShoafWayside</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">ShoafWayside</div>
+        <ul class="nav-links">
+            <li><a href="ShoafWayside.HTML">Home</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="SuccessStories.html">Success Stories</a></li>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>For any general inquiries, please fill out the form below.</p>
+            <form id="contact-form" action="submitForm()" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        
+        <div class="company-info">
+            <h2>Contact Information</h2>
+            <p><strong>Phone:</strong> (123) 456-7890</p>
+            <p><strong>Email:</strong> contact@shoafwayside.com</p>
+        </div>
+    </div>
+</body>
+</html>
