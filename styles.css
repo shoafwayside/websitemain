@@ -439,32 +439,60 @@ blockquote {
     color: #f4f4f4;
 }
 
+/* Services Page */
 .services-container {
     max-width: 960px;
     margin: auto;
-    padding: 20px;
+    text-align: center;
+}
+
+
+.services-container h1 {
+    color: #f4f4f4;
+}
+
+.service h2 {
+    color: #87CEEB;
+}
+
+.service p {
+    color: #f4f4f4;
 }
 
 .service-blocks {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates a three-column grid layout */
+    gap: 20px;
+    padding: 20px;
 }
 
 .service {
-    background: #fff;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    width: calc(33.333% - 20px); /* Adjust the width for 3 items per row minus margin */
-    box-sizing: border-box;
+    background: #1c1c1c; /* Slightly lighter dark background for contrast */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Subtle shadow for depth */
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Responsive adjustments */
+.service:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.service-icon {
+    width: 64px; /* Adjust based on actual icon size */
+    height: auto;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 1024px) {
+    .service-blocks {
+        grid-template-columns: repeat(2, 1fr); /* Adjust to two columns for smaller screens */
+    }
+}
+
 @media (max-width: 768px) {
-    .service {
-        width: calc(50% - 20px); /* Adjust for 2 items per row on smaller screens */
+    .service-blocks {
+        grid-template-columns: 1fr; /* Single column for mobile devices */
     }
 }
 
