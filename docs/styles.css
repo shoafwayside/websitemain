@@ -319,7 +319,7 @@ h1 {
 
 /* FAQs Section Styles */
 .faqs-section {
-    background-color: #242424;
+    background-color: #1a1a1a;
     color: #fff;
     padding: 40px 20px;
     text-align: left;
@@ -336,7 +336,7 @@ h1 {
 
 /* Call to Action Section Styles */
 .cta-section {
-    background-color: #1a1a1a;
+    background-color: #242424;
     color: #fff;
     text-align: center;
     padding: 50px 20px;
