@@ -105,6 +105,7 @@ html {
 /* Hero Section */
 .hero-section {
     text-align: center; /* Center align the content */
+    width: auto;
     position: relative;
     background-color: #1a1a1a;
     color: #fff;
@@ -112,7 +113,9 @@ html {
 
 .overlay-container {
     position: relative;
-    width: 100%;
+    width: auto;
+    max-width: 1920px;
+    margin: auto;
 }
 
 .hero-content, .hero-image {
@@ -121,7 +124,7 @@ html {
 }
 
 .hero-image {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     object-fit: cover;    
 }
@@ -132,12 +135,22 @@ html {
     left: 0;
     width: 50%; /* Adjust based on how much space you want the text overlay to cover */
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark, semi-transparent background */
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); /* Gradient from dark to transparent */
     padding: 20px; /* Adjust padding as needed */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Vertically center content in the overlay */
+}
+
+.text-overlay * {
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000, /* Outline effect */
+         2px 2px 5px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    color: #FFFFFF; /* Ensures text color is white for better visibility */
 }
 
 .service-item {
@@ -147,7 +160,21 @@ html {
     border-radius: 5px;
     width: 30%;
     margin: 10px;
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    text-shadow:
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000, /* Outline effect */
+         2px 2px 5px rgba(0, 0, 0, 0.5); /* Shadow effect */
 }
+
+.service-item:hover {
+    transform: scale(1.05); /* Slightly increase size */
+    background-color: #444; /* Darken the background */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow to the item */
+}
+
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
@@ -186,7 +213,16 @@ h1 {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover effects */
 }
+
+.cta-button:hover {
+    background-color: #0000ff; /* Lighter blue on hover */
+    transform: translateY(-3px); /* Slightly raise the button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+
 .services-list {
     display: flex;
     justify-content: space-around;
@@ -229,40 +265,9 @@ h1 {
     border-radius: 5px;
 }
 
-/* Benefits Section Styles */
-.benefits-section {
-    background-color: #1a1a1a;
-    color: #fff;
-    padding: 40px 20px;
-    text-align: center;
-}
-.benefits-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-.benefit {
-    width: 30%;
-    margin: 15px;
-    padding: 20px;
-    background-color: #333;
-    border-radius: 5px;
-}
-.benefit h3 {
-    color: #87CEEB; /* Accent color */
-    margin-bottom: 10px;
-}
-.benefit p {
-    margin-bottom: 5px;
-}
-.feature {
-    font-style: italic;
-    color: #bbb;
-}
-
 /* Testimonials Section Styles */
 .testimonials-section {
-    background-color: #242424;
+    background-color: #1a1a1a;
     color: #fff;
     padding: 40px 20px;
     text-align: center;
@@ -467,7 +472,7 @@ cite {
 
 .service-blocks {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates a three-column grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Creates a three-column grid layout */
     gap: 20px;
     padding: 20px;
 }
